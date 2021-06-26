@@ -1,0 +1,4 @@
+django
+pymysql
+django-bootstrap4
+cryptography

@@ -1,0 +1,11 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <ul>
+        {%for product in produts %}
+            <li>{{product.["title"]}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

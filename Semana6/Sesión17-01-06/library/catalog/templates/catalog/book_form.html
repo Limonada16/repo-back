@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="submit" class="btn btn-warning">
+</form>
+{% endblock %}

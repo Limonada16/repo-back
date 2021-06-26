@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content  %}
+    <a href="/catalog/books" class="btn btn-primary">Agregar</a>
+    <table border="1" class="table">
+        {% load format_name %}
+        <tr>
+            <th>Title</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Year</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title | upper }}</td>
+            <td>Autor: {{ book.autor | format_name }}</td>
+            <td>
+                <a href="/catalog/{{book.editorial}}/books">
+                    {{ book.editorial | upper }}
+                </a>
+                </td>
+            <td>{{ book.year | add:"2"}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
